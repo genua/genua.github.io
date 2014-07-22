@@ -26,6 +26,8 @@ This will end in as many database queries as there are parents. The alternative
 is to let the database take care of it. Instead we build a rather simple stored
 procedure in PostgreSQL:
 
+    CREATE LANGUAGE plpgsql;
+
     CREATE OR REPLACE FUNCTION ancestor_items(item_id integer)
     RETURNS SETOF item AS $$
       DECLARE
@@ -44,7 +46,7 @@ procedure in PostgreSQL:
 
 Running this stored procedure inside Rails is rather simple as well:
 
-    ActiveRecord::Base.connection('SELECT * FROM ancestor_items(15)')
+    ActiveRecord::Base.connection.execute('SELECT * FROM ancestor_items(15)')
 
 Though this will only return a result set from psql, while it would be
 preferable to get a Relation that is chainable and essentially a Rails-
@@ -52,7 +54,7 @@ native structure.
 This can be achieved by picking the from-method:
 
     def find_ancestor_items(item_id)
-      return Item.from("ancestor_items(#{item_id}) AS items")
+      return Item.from("ancestor_items(#{item_id.to_i}) AS items")
     end
 
 By using that snippet, the stored procedure is utilized, the regular finder
