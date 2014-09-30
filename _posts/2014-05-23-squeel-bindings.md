@@ -1,5 +1,6 @@
 ---
 layout: post
+author: matthias_geier
 title: "Squeel: How bindings work"
 description: "A deeper look at bindings in Squeel with the intention to replace"
 category: "Rails"

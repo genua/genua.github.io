@@ -1,5 +1,6 @@
 ---
 layout: post
+author: matthias_geier
 title: "Ruby - Dynamic inheritance pattern"
 description: "A pattern for calling super in methods generated with define_method"
 category: "Ruby"

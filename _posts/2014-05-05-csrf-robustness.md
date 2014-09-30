@@ -1,5 +1,6 @@
 ---
 layout: post
+author: matthias_geier
 title: "Rails 4.0 - Devise 3.0.1 - CSRF token robustness prevents redirection"
 description: "Every use consumes the CSRF token and therefore leads to
   a warning that prevents redirection or fails on custom forms"

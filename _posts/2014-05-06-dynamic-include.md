@@ -1,5 +1,6 @@
 ---
 layout: post
+author: matthias_geier
 title: "Ruby - Pattern for dynamically including modules"
 description: "A pattern to include Modules by Object instance during
 initialization"

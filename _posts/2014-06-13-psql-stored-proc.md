@@ -1,5 +1,6 @@
 ---
 layout: post
+author: matthias_geier
 title: "PostgreSQL - Recursive data collection"
 description: "Using stored procedures to recusively collect data"
 category: "PostgreSQL"
