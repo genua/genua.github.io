@@ -3,7 +3,11 @@
 
 {% assign author = site.data.authors[page.author] %}
 {% if author %}
-  <h3>by {{ author.name }}</h3>
+  <h3>by
+    {% if author.url %}<a href="{{ author.url }}">{% endif %}
+    {{ author.name }}
+    {% if author.url %}</a>{% endif %}
+  </h3>
 {% endif %}
 </div>
 
